@@ -23,8 +23,9 @@ function displayChart ()
     json.forEach (el => 
         {
             const bar = document.querySelector (`.card_${el.day}`);
+            bar.querySelector ('.card_bar_val').textContent = `$${el.amount}`;
             const inner = bar.querySelector ('.card_bar_inner');
-            inner.style.height = `${el.amount * 0.15}em`;
+            inner.style.height = `${el.amount * 0.2}em`;
 
             if (el.amount > highestVal)
             {
